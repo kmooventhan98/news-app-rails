@@ -1,19 +1,22 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @data.each do |res|%>
-    <div class="col">
-        <div class="card h-100">
 
-          <img src= <%= res.urlToImage %> class="card-img-top" alt="image-placeholder">
-          <div class="card-body">
-            <h5 class="card-title"><%= res.title%></h5>
+      <div class="col">
+          <div class="card h-100">
+              <a href= <%= res.url %> target ="_blank" class='news_card'>
+            <img src= <%= res.urlToImage ? res.urlToImage : 'https://www.cimspa.co.uk/globalassets/images-cimspa/news-images/_news-placeholder-salmon-navy-1920.png?w=1410' %> class="card-img-top" alt="image-placeholder">
+    </a>
+            <div class="card-body">
+              <h5 class="card-title"><%= res.title%></h5>
 
-            <p class="card-text"><%= res.description%></p>
+              <p class="card-text"><%= res.description%></p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary"><%= time_ago_in_words(res.publishedAt)%></small>
+            </div>
           </div>
-          <div class="card-footer">
-            <small class="text-body-secondary"><%= time_ago_in_words(res.publishedAt)%></small>
-          </div>
-        </div>
-    </div>
+      </div>
+
   <% end %>
 </div>
 <%

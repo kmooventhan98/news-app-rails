@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.news_card:hover {
+  cursor: pointer;
+}
