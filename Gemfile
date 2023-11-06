@@ -48,6 +48,9 @@ gem "bootsnap", require: false
 # Env config
 gem "figaro", "~> 1.2"
 
+# News API
+gem "news-api", "~> 0.2.0"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

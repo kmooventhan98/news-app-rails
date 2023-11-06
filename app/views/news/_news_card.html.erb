@@ -1,0 +1,35 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @data.each do |res|%>
+    <div class="col">
+        <div class="card h-100">
+
+          <img src= <%= res.urlToImage %> class="card-img-top" alt="image-placeholder">
+          <div class="card-body">
+            <h5 class="card-title"><%= res.title%></h5>
+
+            <p class="card-text"><%= res.description%></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary"><%= time_ago_in_words(res.publishedAt)%></small>
+          </div>
+        </div>
+    </div>
+  <% end %>
+</div>
+<%
+=begin%>
+ #<Everything:0x00007f9afcdae320
+ @author="https://www.facebook.com/peoplemag",
+ @content=
+  "Taylor Swift and the gang are stepping out!\r\nThe singer, 33, headed out to dinner with Selena Gomez, Sophie Turner, Gigi Hadid, Cara Delevingne and new friend Brittany Mahomes in New York City Saturd… [+3162 chars]",
+ @description=
+  "Taylor Swift had an evening out with friends including Selena Gomez, Sophie Turner, Brittany Mahomes, Cara Delevingne and Gigi Hadid at Bond St restaurant in New York City on Saturday",
+ @id=nil,
+ @name="PEOPLE",
+ @publishedAt="2023-11-05T18:11:00Z",
+ @title="Taylor Swift Has Night Out with Selena Gomez, Sophie Turner, Brittany Mahomes and Gigi Hadid in N.Y.C. - PEOPLE",
+ @url="https://people.com/taylor-swift-selena-gomez-sophie-turner-brittany-mahomes-gigi-hadid-8387559",
+ @urlToImage=
+  "https://people.com/thmb/hP9clncZRCJXz2-SJr0sqRvx4Xg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(708x365:710x367)/Taylor-Swift-Girls-Night-Out-110523-06-8fce9410ecd048e9be177f78fe4ddf26.jpg"> 
+<%
+=end%>
