@@ -1,21 +1,21 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @data.each do |res|%>
 
-      <div class="col">
-          <div class="card h-100">
-              <a href= <%= res.url %> target ="_blank" class='news_card'>
-            <img src= <%= res.urlToImage ? res.urlToImage : 'https://www.cimspa.co.uk/globalassets/images-cimspa/news-images/_news-placeholder-salmon-navy-1920.png?w=1410' %> class="card-img-top" alt="image-placeholder">
-    </a>
-            <div class="card-body">
-              <h5 class="card-title"><%= res.title%></h5>
-
-              <p class="card-text"><%= res.description%></p>
-            </div>
-            <div class="card-footer">
-              <small class="text-body-secondary"><%= time_ago_in_words(res.publishedAt)%></small>
-            </div>
-          </div>
+    <div class="col">
+      <div class="card h-100">
+        <a href="<%= res.url %>" target="_blank" class="news_card">
+          <img src="<%= res.urlToImage ? res.urlToImage : 'https://www.cimspa.co.uk/globalassets/images-cimspa/news-images/_news-placeholder-salmon-navy-1920.png?w=1410' %>" class="card-img-top" alt="image-placeholder">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"><%= res.title %></h5>
+          <p class="card-text"><%= res.description %></p>
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+          <small class="text-body-secondary px-3"><%= time_ago_in_words(res.publishedAt).to_s + ' ago' %></small>
+          <span class="badge text-bg-secondary"><%= res.name %></span>
+        </div>
       </div>
+    </div>
 
   <% end %>
 </div>
