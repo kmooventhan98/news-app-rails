@@ -4,4 +4,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :news, only: %i[index] do
+    collection do
+      get 'search'
+      get 'top_news'
+    end
+  end
 end
